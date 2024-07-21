@@ -1,4 +1,4 @@
-# Deploy Containerized Applications To docker hub
+# Pushing Docker image to docker hub
 ## Sample docker images pushed to docker hub
 
 ![dockerhub](https://github.com/user-attachments/assets/08c3e8e8-78d1-4cda-a642-759a20b3a25d)
