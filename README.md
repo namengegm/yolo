@@ -4,73 +4,73 @@
 ![dockerhub](https://github.com/user-attachments/assets/08c3e8e8-78d1-4cda-a642-759a20b3a25d)
 ## Choice of the base image on which to build each container.
 ## Dockerfile directives:
-# Build stage
+### Build stage
 FROM node:16-alpine3.16 as build-stage
-# Set the working directory inside the container
+### Set the working directory inside the container
 WORKDIR /client
-# Copy package.json and package-lock.json
+### Copy package.json and package-lock.json
 COPY package*.json ./
-# Install dependencies and clears the npm cache and removes any temporary files
+### Install dependencies and clears the npm cache and removes any temporary files
 RUN npm install --only=production && \
     npm cache clean --force && \
     rm -rf /tmp/*
-# Copy the rest of the application code
+### Copy the rest of the application code
 COPY . .
-# Build the application and  remove development dependencies
+### Build the application and  remove development dependencies
 RUN npm run build && \
     npm prune --production
 
-# Production stage
+### Production stage
 FROM node:16-alpine3.16 as production-stage
 WORKDIR /client
-# Copy only the necessary files from the build stage
+### Copy only the necessary files from the build stage
 COPY --from=build-stage /client/build ./build
 COPY --from=build-stage /client/public ./public
 COPY --from Build stage
 FROM node:16-alpine3.16 as build-stage
-# Set the working directory inside the container
+### Set the working directory inside the container
 WORKDIR /client
-# Copy package.json and package-lock.json
+### Copy package.json and package-lock.json
 COPY package*.json ./
-# Install dependencies and clears the npm cache and removes any temporary files
+### Install dependencies and clears the npm cache and removes any temporary files
 RUN npm install --only=production && \
     npm cache clean --force && \
     rm -rf /tmp/*
-# Copy the rest of the application code
+### Copy the rest of the application code
 COPY . .
-# Build the application and  remove development dependencies
+### Build the application and  remove development dependencies
 RUN npm run build && \
     npm prune --production
 
-# Production stage
+### Production stage
 FROM node:16-alpine3.16 as production-stage
 WORKDIR /client
-# Copy only the necessary files from the build stage
+### Copy only the necessary files from the build stage
 COPY --from=build-stage /client/build ./build
 COPY --from=build-stage /client/public ./public
 COPY --from=build-stage /client/src ./src
 COPY --from=build-stage /client/package*.json ./
-# Set the environment variable for the app
+### Set the environment variable for the app
 ENV NODE_ENV=production
-# Expose the port used by the app
+### Expose the port used by the app
 EXPOSE 3000
 
-# Prune the node_modules directory to remove development dependencies and clears the npm cache and removes any temporary files
+### Prune the node_modules directory to remove development dependencies and clears the npm cache and removes any temporary files
 
 
-# Start the application
+### Start the application
 CMD ["npm", "start"]=build-stage /client/src ./src
 COPY --from=build-stage /client/package*.json ./
 
-# Set the environment variable for the app
+### Set the environment variable for the app
 ENV NODE_ENV=production
 
-# Expose the port used by the app
+### Expose the port used by the app
 EXPOSE 3000
 
-# Prune the node_modules directory to remove development dependencies and clears the npm cache and removes any temporary file
+### Prune the node_modules directory to remove development dependencies and clears the npm cache and removes any temporary file
 
-# Start the application
+### Start the application
 CMD ["npm", "start"]
 
 ## Docker-compose Networking 
