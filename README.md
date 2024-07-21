@@ -1,5 +1,5 @@
-# Deploy Containerized Applications To Kubernetes Webinar
-![poster](/images/Deploying-Kubernates-Event-FB.png)
+# Deploy Containerized Applications To docker hub
+![poster](/home/user/Pictures/Screenshots/dockerhub.png)
 
 
 ## Event Brief
