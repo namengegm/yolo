@@ -1,6 +1,8 @@
 # Deploy Containerized Applications To docker hub
+## Sample docker images pushed to docker hub
 
-file:///home/user/Pictures/Screenshots/dockerhub.png
+![dockerhub](https://github.com/user-attachments/assets/08c3e8e8-78d1-4cda-a642-759a20b3a25d)
+
 
 
 
@@ -9,7 +11,6 @@ file:///home/user/Pictures/Screenshots/dockerhub.png
 
 
 ## Dockerfile directives:
-Hands-on workshop 
 
 ## Docker-compose Networking 
 
