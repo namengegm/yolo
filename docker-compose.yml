@@ -1,11 +1,7 @@
 
 #This file builds the Docker images for a React/NodeJS application and runs it as microservices on Docker containers
 
-#To ensure successful execution, clone this entire repository and execute this file while in the root folder of the cloned repository
-
-#It's also a requirement to have Docker and the docker-compose plugin installed in your environment
-
-#To launch this app without having to clone the entire repository,use the docker-compose.yaml file to run the app
+#To launch this app without having to clone the entire repository,use the docker-compose.yml file to run the app
 
 version: "3.8"
 
@@ -53,7 +49,7 @@ services:
         source: app-mongo-data
         target: /data/db
 
-#Creates the network infrastructure necessary for the containers to communicate with each other
+#Creates the network infrastructure necessary for the containers to communicate with each other.
 networks:
   app-net:
     name: app-net
@@ -64,7 +60,7 @@ networks:
         - subnet: 172.20.0.0/16 
           ip_range: 172.20.0.0/16 
 
-#Creates a Docker volume that persists all the data stored in the database
+#Creates a Docker volume that persists all the data stored in the database.
 volumes:
   app-mongo-data:
     driver: local
