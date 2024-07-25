@@ -38,6 +38,7 @@ Created and attached a volume to containers in the docker yml file. This is to h
 Permission issues check resolution https://stackoverflow.com/questions/48957195/how-to-fix-docker-got-permission-denied-issue
 
 ### Good practices 
-- create images with a version name
-- Run containers with tag -rm to remove it after it is stopped
-- Ensure containers have version tags, volume attached and are run from the stable images
+- Create images with a version tags.
+- Run containers with tag -rm to remove it after it is stopped.
+- Run container with a flag -d in detached mode to allow user interact with cmd
+- Ensure containers have version tags, volume attached and are run from the stable images.
