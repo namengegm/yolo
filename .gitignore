@@ -7,3 +7,13 @@ vault.yml
 .vscode
 .vscode/*
 .vscode/*.json
+inventory.yml
+playbook.yml
+vagrant
+hosts
+frontend-deployment.yaml
+explanation.md
+backen-deployment.yaml
+roles
+ansible.cfg
+imaage.png
