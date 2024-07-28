@@ -38,7 +38,7 @@ services:
 
   #Creates the database microservice
   app-ip-mongo:
-    image: mongo
+    image: mongo:v1.0.0
     container_name: app-mongo
     ports:
       - "27017:27017"
