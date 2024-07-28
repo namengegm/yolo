@@ -1,6 +1,7 @@
 # Pushing Docker image to docker hub
 ## Sample docker images pushed to docker hub
-# My docker hub link https://hub.docker.com/repository/docker/namenge/ip2-client-img/general
+### My docker hub link:
+https://hub.docker.com/repository/docker/namenge/ip2-client-img/general
 
 ![dockerhub](https://github.com/user-attachments/assets/08c3e8e8-78d1-4cda-a642-759a20b3a25d)
 ## Choice of the base image on which to build each container.
