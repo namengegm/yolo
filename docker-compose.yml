@@ -32,7 +32,7 @@ services:
     ports:
       - "5000:5000"
     depends_on: 
-      - app-mongo
+      - app-ip-mongo
     networks:
       - app-net
 
