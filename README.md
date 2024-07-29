@@ -2,8 +2,7 @@
 ## Sample docker images pushed to docker hub
 ### My docker hub link:
 https://hub.docker.com/
-
-![dockerhub](https://github.com/user-attachments/assets/08c3e8e8-78d1-4cda-a642-759a20b3a25d)
+![dockerhub3](https://github.com/user-attachments/assets/4b065e6c-97c6-4b1f-9c25-89558ab76f3a)
 ## Choice of the base image on which to build each container.
 ## Dockerfile directives:
  - Build stage
