@@ -1,2 +1,16 @@
 ---
 # tasks file for Deploy-backend
+- name: Pull image from repository
+  docker_image:
+    name: 'namenge/ip2-backend-img:v1.0.0'
+    source: pull
+- name: Create Node.js Backend Container
+  docker_container:
+    name: api-yolo-backend
+    image: 'namenge/ip2-backend-img:v1.0.0'
+    networks:
+      - name: app-net
+    ports:
+      - '5000:5000'
+    command: npm start
+  become: true
