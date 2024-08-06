@@ -21,3 +21,9 @@ Organize modules separately and refer them in playbook
 -  Under playbook remove tasks and replace with roles
 - List modules in preferred order of execution
 - Run vagrant provision.
+
+# Vagrantfile
+## Add the following statement in the vagrant file to reference the playbook
+### Config.vm.provision:ansible do |ansible| 
+ ### ansible.playbook=“playbook.yaml”
+### end 
