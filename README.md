@@ -1,4 +1,4 @@
-# Configuring and provisining server using ANsible 
+# Configuring and provisining server using Ansible 
 - Install vangrant
 - Install ansible
 - Create a folder
@@ -11,7 +11,7 @@
 - Get into the server  - vagrant ssh
 - Exit 
 
-# Separate concerns using roles
+# Separation of concerns using roles
 Organize modules separately and refer them in playbook 
 
 - Create a folder called roles
