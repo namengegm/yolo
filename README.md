@@ -16,7 +16,7 @@ Organize modules separately and refer them in playbook
 
 - Create a folder called roles
 - Navigate to roles
-- execute ansible-galaxy init <module name>
+- execute ansible-galaxy init <your_role_name>
 - Navigate to task >main.yml and add executable commmands
 -  Under playbook remove tasks and replace with roles
 - List modules in preferred order of execution
