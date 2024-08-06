@@ -3,6 +3,7 @@
   hosts: all
   become: true
   roles: 
+    - Deploy-frontend  
     - Deploy-backend
     - setup-DB  
-    - Deploy-frontend    
+     
