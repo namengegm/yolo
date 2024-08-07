@@ -1,13 +1,13 @@
 # Configuring and provisining server using Ansible 
 - Install vangrant
 - Install ansible
-- Create a folder
-- Navigate to the folder 
-- Vagrant box list  -- 
-- Create a vagrant file  
-- Vagrant box init generic/ubuntu
+- Confirm the version VBoxManage --version 
+- Add VM do vagrant box add <box>
+- Navigate to the project's folder i.e yolo 
+- Vagrant box list   
+- Innitialize vagrant within the folder,  run Vagrant box init generic/ubuntu
 - Do vagrant up  - spin up the server 
-- Check if vagrant box is running -  do vagrant status
+- Check if vagrant box is running -  run vagrant status
 - Get into the server  - vagrant ssh
 - Exit 
 

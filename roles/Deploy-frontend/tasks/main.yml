@@ -4,7 +4,7 @@
   docker_image:
     name: 'namenge/ip2-client-img:v1.0.0'
     source: pull
-- name: Create Node.js Backend Container
+- name: Create Node.js frontent Container
   docker_container:
     name: web-yolo-backend
     image: 'namenge/ip2-client-img:v1.0.0'
