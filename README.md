@@ -1,29 +1,56 @@
-# Configuring and provisining server using Ansible 
-- Install vangrant
-- Install ansible
-- Confirm the version VBoxManage --version 
-- Add VM do vagrant box add <box>
-- Navigate to the project's folder i.e yolo 
-- Vagrant box list   
-- Innitialize vagrant within the folder,  run Vagrant box init generic/ubuntu
-- Do vagrant up  - spin up the server 
-- Check if vagrant box is running -  run vagrant status
-- Get into the server  - vagrant ssh
-- Exit 
+# Kubernetes Deployment
+Installing of Kubernetes 
+- install kubernates
+- Install minikube
 
-# Separation of concerns using roles
-Organize modules separately and refer them in playbook 
+# Clone a repository
 
-- Create a folder called roles
-- Navigate to roles
-- execute ansible-galaxy init <your_role_name>
-- Navigate to task >main.yml and add executable commmands
--  Under playbook remove tasks and replace with roles
-- List modules in preferred order of execution
-- Run vagrant provision.
 
-# Vagrantfile
-## Add the following statement in the vagrant file to reference the playbook
-### Config.vm.provision:ansible do |ansible| 
- ### ansible.playbook=“playbook.yaml”
-### end 
+# Building an image from Dockfile
+
+```
+docker build . -t trajendra/django-todo:latest
+```
+
+# Push the Docker image to a Registry
+## Login to the Docker hub
+```
+docker login
+```
+## Push the image to register
+
+```
+docker push trajendra/django-todo:latest
+```
+# create a namespace to help organize action files
+- kubectl create namespace my-django-app
+# Create pod
+- apiVersion: v1 specifies the Kubernetes API version being used.
+- kind: Pod indicates that you are creating a Pod object.
+- metadata contains metadata about the Pod, including its name.
+- spec defines the desired state of the Pod.
+- containersan array of container objects running inside the Pod. In this case, there is only one container.
+- name: crud-backend-app sets the name of the container to "crud-backend-app".
+- image: trajendra/crudbackend:latest specifies the Docker image to be used for the container. In this case, it uses the image "trajendra/django-todo" with the "latest" tag.
+- ports defines the network ports that the container exposes. In this example, it exposes port 3000.
+
+
+## Run create pod command after creating yaml file in manifest of kind = pod
+ ```
+ kubectl apply -f pod.yml
+ ```
+# Create deployment yaml in the manifest folder
+- kind: Defines the type of resource, which is a Deployment in this case.
+
+ - selector: Specifies the labels used to select which Pods are part of this Deployment.
+
+ - matchLabels: Defines the labels that Pods must have to be considered part of the Deployment. In this case, Pods with the label
+ - replicas:Defines the desired number of replicas (Pods) to maintain, set to 3 in this example.
+ - template:Defines the Pod template used to create the Pods managed by the Deployment.
+ - spec: Specifies the specifications for the Pods created from the template.
+
+ # Run the Deployment
+
+ ```
+ kubectl apply -f deployment.yml 
+ ```

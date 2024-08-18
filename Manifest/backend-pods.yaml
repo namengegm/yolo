@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend
+  namespace: my-ecommerce-app
+  labels:
+    name: backend
+spec:
+  containers:
+  - name: backend-container
+    image: namenge/ip2-backend-img:v1.0.0
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 5000

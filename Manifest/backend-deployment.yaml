@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: client-deployment
+  name: backend-deployment
   labels:
-    app: client
+    app: backend
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: client
+      app: backend
   template:
     metadata:
       labels:
-        app: client
+        app: backend
     spec:
       containers:
-        - name: client
-          image: namenge/ip2-client-img:v1.0.0
+        - name: backend
+          image: namenge/ip2-backend-img:v1.0.0
           command: ["npm", "start"] 
           ports:
-            - containerPort: 3000
+            - containerPort: 5000
           resources:
             limits:
               memory: "256Mi"
@@ -35,10 +35,10 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: client
+    app: backend
   ports:
     - protocol: TCP
-      port: 3000
-      targetPort: 3000
+      port: 5000
+      targetPort: 5000
       nodePort: 30100
   

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client
+  namespace: my-ecommerce-app
+  labels:
+    name: client
+spec:
+  containers:
+  - name: client-container
+    image: namenge/ip2-client-img:v1.0.0
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 3000
