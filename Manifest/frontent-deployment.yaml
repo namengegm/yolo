@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-deployment
+  name: client-deployment
   labels:
-    app: backend
+    app: client
   namespace: my-ecommerce-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: backend
+      app: client
   template:
     metadata:
       labels:
-        app: backend
+        app: client
     spec:
       containers:
-        - name: backend
-          image: namenge/ip2-backend-img:v1.0.0
-          ##command: ["npm", "start"] 
+        - name: client-container
+          image: namenge/ip2-client-img:v1.0.0
+          command: ["npm", "start"] 
           ports:
-            - containerPort: 5000
+            - containerPort: 3000
           resources:
             limits:
               memory: "256Mi"
@@ -32,14 +32,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-service
+  name: client-service
 spec:
   type: LoadBalancer
   selector:
-    app: backend
+    app: client
   ports:
     - protocol: TCP
-      port: 5000
-      targetPort: 5000
-      nodePort: 30100
+      port: 3000
+      targetPort: 3000
+      nodePort: 30200
   
