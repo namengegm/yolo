@@ -76,3 +76,5 @@ docker push namenge/ip2-Client:v1.0.0
   ```
   kubectl get deployments -n=my-ecommerce-app
  ```
+![state](https://github.com/user-attachments/assets/072c5dba-d4fc-45c1-a6a7-9179e6eb1b2c)
+
