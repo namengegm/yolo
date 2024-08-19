@@ -18,7 +18,6 @@ spec:
       containers:
         - name: client-container
           image: namenge/ip2-client-img:v1.0.0
-          command: ["npm", "start"] 
           ports:
             - containerPort: 3000
           resources:
@@ -32,7 +31,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: client-service
+  name: client
 spec:
   type: LoadBalancer
   selector:
