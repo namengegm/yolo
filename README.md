@@ -9,7 +9,7 @@ Installing of Kubernetes
 # Building an image from Dockfile
 
 ```
-docker build . -t trajendra/django-todo:latest
+docker build . -t namenge/ip2-Client:v1.0.0
 ```
 
 # Push the Docker image to a Registry
@@ -20,10 +20,10 @@ docker login
 ## Push the image to register
 
 ```
-docker push trajendra/django-todo:latest
+docker push namenge/ip2-Client:v1.0.0
 ```
 # create a namespace to help organize action files
-- kubectl create namespace my-django-app
+- kubectl create namespace my-ecommerce-app
 # Create pod
 - apiVersion: v1 specifies the Kubernetes API version being used.
 - kind: Pod indicates that you are creating a Pod object.
@@ -37,8 +37,12 @@ docker push trajendra/django-todo:latest
 
 ## Run create pod command after creating yaml file in manifest of kind = pod
  ```
- kubectl apply -f pod.yml
+ kubectl apply -f client-pods.yml
  ```
+ ```
+ kubectl apply -f backend-pods.yml
+ ```
+ 
 # Create deployment yaml in the manifest folder
 - kind: Defines the type of resource, which is a Deployment in this case.
 
@@ -49,8 +53,26 @@ docker push trajendra/django-todo:latest
  - template:Defines the Pod template used to create the Pods managed by the Deployment.
  - spec: Specifies the specifications for the Pods created from the template.
 
- # Run the Deployment
+ # Run the Deployments
 
  ```
- kubectl apply -f deployment.yml 
+ kubectl apply -f frontent-deployment.yaml 
+ ```
+
+ ```
+ kubectl apply -f backend-deployment.yaml 
+ ```
+
+ ```
+ kubectl apply -f mongo-db.yaml 
+ ```
+
+# check status 
+## Pods
+ ```
+  kubectl get pods -n=my-ecommerce-app
+ ```
+ ## Deployments
+  ```
+  kubectl get deployments -n=my-ecommerce-app
  ```
