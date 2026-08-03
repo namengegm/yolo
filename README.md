@@ -70,7 +70,7 @@ docker push namenge/ip2-Client:v1.0.0
 # check status 
 ## Pods
  ```
-  kubectl get pods -n=my-ecommerce-app
+  kubectl get pods -n=my-ecommerce-app....
  ```
  ## Deployments
   ```
